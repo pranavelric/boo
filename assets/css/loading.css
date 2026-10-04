@@ -1,0 +1,44 @@
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    height: 100svh;
+}
+  
+.center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: max-content;
+    max-width: 90vw;
+}
+
+.btn{
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 16px;
+    padding: 0.4rem 0.8rem;
+}
+
+#disable{
+    cursor: wait;
+}
+
+#enable{
+    display: none;
+}
+
+.watermark {
+    color: BLACK;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}

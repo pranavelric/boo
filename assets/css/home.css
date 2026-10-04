@@ -1,0 +1,83 @@
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+body{
+    padding: 2rem;
+    width: 100%;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    background-image: url('../img/bg.gif');
+    background-size: cover;
+    background-position: center;
+}
+
+body.hovered {
+    background-image: url('../img/wall6.gif');
+    background-position: 0%;
+    background-size: auto;
+}
+
+.container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    margin-inline: auto;
+    filter: drop-shadow(5px 5px 20px rgba(0, 0, 0, 0.2));
+}
+
+.container img {
+    width: min(100%, 510px);
+    max-height: 78svh;
+    object-fit: contain;
+}
+
+.btn{
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    min-width: 120px;
+    padding: 0.75rem 1rem;
+    font-size: 1.25rem;
+    outline: none;
+    border: none;
+    background-color: #455566;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: 0.3s;
+    color: #fff;
+}
+
+
+.btn:hover span,
+.btn.is-peeking span {
+    display:none
+}
+  
+.btn:hover:before,
+.btn.is-peeking:before {
+    content:"Hiiiii Cutieee \1F49E ";
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 1rem;
+    }
+
+    .btn {
+        font-size: 1.05rem;
+        padding: 0.6rem 0.9rem;
+    }
+}
+
+.watermark, .watermark a {
+    color: rgb(238, 203, 203);
+}

@@ -1,0 +1,111 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* background: #23011c; */
+  /* background-image: linear-gradient(
+    0.25turn,
+    #100716,
+    #1f031b,
+    #1c0101,
+    #250212,
+    #200f02
+  ); */
+  background-color: rgb(24, 22, 22);
+  height: 100svh;
+  overflow: hidden;
+}
+
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
+.circle {
+  position: fixed;
+  bottom: 0;
+  pointer-events: none;
+  width: 20px;
+  aspect-ratio: 1/1;
+  background: rgb(248, 248, 248);
+  box-shadow: 0 0 10px rgb(232, 9, 16), 0 0 20px rgb(148, 7, 7),
+    0 0 30px rgb(91, 3, 3), 0 0 40px rgb(68, 2, 10), 0 0 50px rgb(32, 1, 2);
+  border-radius: 50%;
+  animation: animate 5s linear forwards;
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(-100vh) skew(-5deg);
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) skew(5deg);
+    opacity: 0;
+  }
+}
+
+.circle::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 25%;
+  width: 50%;
+  height: 100vh;
+  opacity: 0.5;
+}
+
+h1 {
+  margin: clamp(3rem, 14svh, 10rem) 0 0;
+  padding: 0 1rem 3rem;
+  text-align: center;
+  font-size: clamp(2rem, 7vw, 3.5rem);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: whitesmoke;
+  position: relative;
+  z-index: 1;
+}
+
+.red {
+  color: rgb(233, 71, 71);
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(2rem, 9svh, 7rem);
+  padding: 0 1rem;
+  gap: clamp(2rem, 16vw, 12rem);
+  position: relative;
+}
+
+#yes {
+  width: clamp(105px, 28vw, 150px);
+  height: clamp(140px, 37vw, 200px);
+  font-size: clamp(2rem, 7.5vw, 50px);
+  border-radius: 1rem 3rem 2rem 4rem;
+  z-index: 1;
+}
+
+#no {
+  width: clamp(140px, 37vw, 200px);
+  height: clamp(105px, 28vw, 150px);
+  font-size: clamp(2rem, 7.5vw, 50px);
+  border-radius: 4rem 2rem 3rem 1rem;
+  z-index: 1;
+}
+
+.watermark {
+  color: rgb(243, 214, 214);
+}
+
+.watermark a {
+  text-decoration: none;
+  color: rgb(243, 214, 214);
+}

@@ -1,0 +1,57 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	font-family: dubai;
+}
+html, body {
+	height: 100%;
+	overflow: hidden;
+}
+
+section{
+	position: relative;
+	min-height: 100svh;
+	background: #000;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: clamp(2rem, 8svh, 6rem);
+	padding: 2rem 1rem;
+	text-align: center;
+}
+section h2{
+	color: #fff;
+	font-size: clamp(2rem, 9vw, 5em);
+	cursor: default;
+}
+
+section h2 span{
+    color: rgb(240, 99, 99);
+}
+
+section .btn{
+    margin: 0;
+    font-size: clamp(1.1rem, 3.5vw, 30px);
+    padding: 0.5rem 1.25rem;
+}
+
+.light{
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	background: radial-gradient(circle at var(--x) var(--y) , transparent 10%, rgba(0,0,0,0.95) 20%);
+}
+
+.watermark {
+    color: rgb(243, 214, 214);
+}
+
+.watermark a{
+    text-decoration: none;
+    color: rgb(243, 214, 214);
+}

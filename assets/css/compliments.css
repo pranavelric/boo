@@ -1,0 +1,168 @@
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+body{
+    background: #0c192c;
+}
+
+/* the user can never scroll here, only the button moves between the two screens */
+.screens {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    touch-action: none;
+}
+
+.screens__track {
+    height: 200%;
+    transition: transform 0.8s ease;
+    will-change: transform;
+}
+
+.screens__track.is-revealed {
+    transform: translateY(-50%);
+}
+
+.container{
+    position: relative;
+    width: 100%;
+    height: 50%;
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+h2{
+    color: antiquewhite;
+    font-size: clamp(1.3rem, 4vw, 2rem);
+}
+
+h3{
+    padding-bottom: 2rem;
+    color: #203757;
+    font-size: clamp(1rem, 3vw, 1.5rem);
+}
+
+.btn{
+    z-index: 1000;
+}
+
+.hearts{
+    font-size: clamp(2.5rem, 8vw, 100px);
+    font-weight: bold;
+    position: fixed;
+    top: -1vh;
+    left: 0;
+    transform: translateY(0%);
+    animation: fall 1s ease-in infinite;
+    pointer-events: none;
+}
+
+
+@keyframes fall{
+    to{
+        transform: translateY(250vh);
+    }
+}
+
+.chori-chori {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem clamp(1rem, 4vw, 3rem) 0;
+}
+
+h1{  
+    padding: 0 clamp(0.5rem, 2vw, 2rem);
+    font-size: clamp(1.1rem, 4vw, 2.5rem);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: whitesmoke;
+}
+
+#center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 3rem;
+}
+
+.beauti, .gorg, .wow{
+    color: transparent;
+    -webkit-text-stroke: 3px darkmagenta;
+    position: relative;
+    font-size: clamp(1.3rem, 5.5vw, 3rem);
+}
+
+#beauti{
+    padding: clamp(0.75rem, 3vh, 2rem) 0;
+}
+
+#gorg{
+    text-align: center;
+    padding: clamp(0.75rem, 3vh, 2rem) 0;
+}
+
+#wow{
+    text-align: right;
+    padding: clamp(0.75rem, 3vh, 2rem) 0;
+}
+
+.beauti::before{
+    content: "BEAUTIFUL!!!!!!";
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    overflow: hidden;
+    color: darkmagenta;
+    border-right: 8px solid darkmagenta;
+    animation: slidein infinite 1.5s;
+}
+.gorg::before{
+    content: "GORGEOUS!!!!!!";
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    overflow: hidden;
+    color: darkmagenta;
+    border-right: 8px solid darkmagenta;
+    animation: slidein infinite 1.5s;
+    animation-direction: reverse;
+}
+.wow::before{
+    content: "WOWWWW!!!!!!";
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    overflow: hidden;
+    color: darkmagenta;
+    border-right: 8px solid darkmagenta;
+    animation: slidein infinite 1.5s;
+}
+
+@keyframes slidein {
+    to {
+        width: 100%;
+        filter: drop-shadow(0 0 25px darkmagenta);
+    }
+}
+
+.beauti:hover::before, .gorg:hover::before, .wow:hover::before{
+    width: 100%;
+    filter: drop-shadow(0 0 25px darkmagenta);
+}
+
+.watermark {
+    color: rgb(238, 203, 203);
+}
+
+a{
+    text-decoration: none;
+    color: rgb(238, 203, 203);
+}
