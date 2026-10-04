@@ -1,0 +1,211 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #0c192c;
+}
+
+body {
+    color: #fff6ee;
+    background:
+        radial-gradient(ellipse at 50% 12%, rgba(77, 73, 111, 0.55), transparent 55%),
+        linear-gradient(150deg, #0c192c 0%, #161b34 58%, #25152f 100%);
+}
+
+.heart-layer {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.screens {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    overflow: hidden;
+    touch-action: none;
+}
+
+.screens__track {
+    width: 100%;
+    height: 200%;
+    transition: transform 800ms cubic-bezier(0.2, 0.75, 0.25, 1);
+    will-change: transform;
+}
+
+.screens__track.is-revealed {
+    transform: translateY(-50%);
+}
+
+.intro-screen,
+.compliment-screen {
+    position: relative;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem 3.5rem;
+    text-align: center;
+}
+
+.intro-content {
+    width: min(100%, 42rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(0.9rem, 3vh, 1.5rem);
+}
+
+.eyebrow {
+    color: #e4b9a1;
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.intro-content h1 {
+    color: #fff6ee;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(2.6rem, 11vw, 5.25rem);
+    font-weight: 600;
+    line-height: 0.95;
+    letter-spacing: 0;
+}
+
+.warning-copy {
+    color: rgba(255, 246, 238, 0.72);
+    font-size: clamp(0.95rem, 3.5vw, 1.15rem);
+}
+
+.reveal-button {
+    min-height: 3.2rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 999px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.compliment-screen {
+    gap: clamp(0.55rem, 2vh, 1rem);
+    padding-inline: clamp(1rem, 5vw, 4rem);
+}
+
+.compliment-screen > .eyebrow {
+    margin-bottom: clamp(0.2rem, 1vh, 0.75rem);
+}
+
+.compliment-line {
+    width: min(100%, 65rem);
+    padding: clamp(0.25rem, 1vh, 0.65rem) 0;
+}
+
+.compliment-line h2 {
+    color: #fff6ee;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(1.7rem, 6.5vw, 4rem);
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: 0;
+}
+
+.compliment-line span {
+    position: relative;
+    display: inline-block;
+    color: transparent;
+    -webkit-text-stroke: 1px #f2a5bc;
+    text-shadow: 0 0 22px rgba(223, 121, 163, 0.2);
+}
+
+.compliment-line span::after {
+    position: absolute;
+    inset: 0;
+    width: 0;
+    overflow: hidden;
+    color: #f2a5bc;
+    white-space: nowrap;
+    content: attr(data-word);
+    border-right: 2px solid #f2a5bc;
+    animation: write-on 1.6s ease-in-out infinite alternate;
+}
+
+.compliment-gorgeous span::after {
+    animation-direction: alternate-reverse;
+    animation-delay: 250ms;
+}
+
+.compliment-wow span::after {
+    animation-delay: 500ms;
+}
+
+.final-button {
+    min-height: 3.2rem;
+    max-width: 100%;
+    margin-top: clamp(0.45rem, 2vh, 1.25rem);
+    padding: 0.8rem 1.5rem;
+    border: 1px solid rgba(255, 226, 174, 0.6);
+    border-radius: 999px;
+    background: linear-gradient(135deg, #f5d9a6, #e9b8a0);
+    color: #39273a;
+    font-weight: 700;
+    box-shadow: 0 10px 30px rgba(233, 184, 160, 0.18);
+    transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.final-button:hover,
+.final-button:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 36px rgba(233, 184, 160, 0.28);
+}
+
+.falling-heart {
+    position: absolute;
+    top: -2rem;
+    font-size: clamp(1.1rem, 4vw, 2.4rem);
+    pointer-events: none;
+    animation: fall linear forwards;
+}
+
+.watermark {
+    z-index: 5;
+    color: rgba(255, 236, 232, 0.7);
+}
+
+@keyframes write-on {
+    to {
+        width: 100%;
+        filter: drop-shadow(0 0 15px rgba(242, 165, 188, 0.8));
+    }
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(115vh) rotate(24deg);
+        opacity: 0;
+    }
+}
+
+@media (max-height: 620px) {
+    .compliment-screen {
+        gap: 0.35rem;
+    }
+
+    .compliment-line {
+        padding-block: 0.15rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}

@@ -1,0 +1,164 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    min-height: 100%;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    background:
+        radial-gradient(ellipse at 50% 0%, rgba(255,255,255,0.9), transparent 58%),
+        linear-gradient(180deg, #fdf1f1 0%, #f9e4e6 48%, #f3d5d9 100%);
+    color: #552c3d;
+}
+
+body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-height: 100svh;
+    overflow-x: hidden;
+    padding: clamp(1rem, 4vh, 2.5rem) 1rem 0;
+}
+
+.apology-card {
+    position: relative;
+    z-index: 1;
+    width: min(100%, 34rem);
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(0.85rem, 2.5vh, 1.25rem);
+    text-align: center;
+    padding: clamp(1.4rem, 6vw, 3rem) clamp(1.1rem, 6vw, 3.2rem);
+    border: 1px solid rgba(119, 73, 90, 0.14);
+    border-radius: 1.75rem;
+    background: rgba(255, 250, 248, 0.76);
+    box-shadow: 0 24px 60px rgba(118, 65, 79, 0.11);
+    backdrop-filter: blur(8px);
+}
+
+.eyebrow {
+    color: #8d4558;
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.apology-gif {
+    width: clamp(6rem, 28vw, 10rem);
+    height: clamp(6rem, 28vw, 10rem);
+    object-fit: contain;
+    filter: drop-shadow(0 12px 18px rgba(118, 65, 79, 0.14));
+}
+
+.apology-card h1 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(2.8rem, 11vw, 4.8rem);
+    line-height: 0.92;
+    color: #6d3a4d;
+    font-weight: 700;
+    letter-spacing: 0;
+}
+
+.apology-card h1 span {
+    color: #d76c82;
+}
+
+.subtitle {
+    max-width: 27rem;
+    color: rgba(44, 30, 34, 0.72);
+    font-size: clamp(0.98rem, 3.8vw, 1.1rem);
+    line-height: 1.75;
+}
+
+.back-button {
+    width: min(100%, 16rem);
+    min-height: 3.1rem;
+    padding: 0.85rem 1.5rem;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #d98596 0%, #a95068 100%);
+    color: #fff;
+    font-weight: 600;
+    box-shadow: 0 12px 25px rgba(141, 69, 88, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.back-button:hover,
+.back-button:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 30px rgba(141, 69, 88, 0.27);
+}
+
+.light {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255,255,255,0.2), rgba(255,255,255,0.08) 18%, rgba(116, 63, 78, 0.12) 40%, rgba(84, 36, 46, 0.28) 100%);
+}
+
+.watermark {
+    position: relative;
+    z-index: 1;
+    margin: 0.7rem auto 0.8rem;
+    color: rgba(98, 56, 71, 0.68);
+    letter-spacing: 0.08em;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.floating-heart {
+    position: fixed;
+    bottom: -8vh;
+    color: rgba(216, 110, 135, 0.8);
+    font-size: 1.2rem;
+    pointer-events: none;
+    user-select: none;
+    animation: floatUp 4s ease-in forwards;
+    z-index: 0;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) scale(0.8);
+        opacity: 0;
+    }
+    15% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) scale(1.2) rotate(18deg);
+        opacity: 0;
+    }
+}
+
+@media (max-height: 650px) {
+    .apology-card {
+        gap: 0.65rem;
+        padding-block: 1rem;
+    }
+
+    .apology-gif {
+        width: 5.5rem;
+        height: 5.5rem;
+    }
+
+    .subtitle {
+        line-height: 1.55;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}

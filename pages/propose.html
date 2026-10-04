@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Do You Love Me? - But... I Love You</title>
-    <meta name="description" content="The classic proposal page - ask do you love me with a playful twist, part of the But... I Love You interactive experience.">
+    <title>Do you love me?</title>
+    <meta name="description" content="A soft, warm little question asked in a personal way for Boo.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://ask-her-out.rohansrma.me/pages/propose.html">
     <link rel="icon" href="../assets/img/logo.png" type="image/png">
@@ -16,43 +16,27 @@
 </head>
 
 <body>
-    <h1>Do you love meeeeee?</h1>
-    <div class="content">
-	    <img id="image" src="../assets/img/smart.gif" alt="Smart, confident pose" loading="eager">
-        <div class="buttons">
-        <button type="button" onclick="yesFunction()">
-            <span>Yes &#129325;</span>
-        </button>
-        <button type="button" onclick="noFunction()">
-            <span>No &#128532;</span>
-        </button>
+    <main class="question-scene">
+        <p class="eyebrow">a very important question</p>
+        <h1>Do you love me?</h1>
+        <div class="content">
+            <img id="image" src="../assets/img/smart.gif" alt="A playful, confident expression" loading="eager">
+            <div class="buttons">
+                <button type="button" class="yes-btn" onclick="yesFunction()">
+                    <span>Yes &#129325;</span>
+                </button>
+                <button type="button" class="no-btn" onclick="noFunction()">
+                    <span>No &#128532;</span>
+                </button>
+            </div>
         </div>
-        <button type="button" class="romantic1" onclick="myFunction()">
-            <span>Make Everything Romantic</span>
-        </button>
-        <button type="button" class="romantic2" onclick="myFunction()">
-            <span>Make Everything Romantic</span>
-        </button>
-        <button type="button" class="romantic3" onclick="myFunction()">
-            <span>Make Everything Romantic</span>
-        </button>
-        <button type="button" class="romantic4" onclick="myFunction()">
-            <span>Make Everything Romantic</span>
-        </button>
-        <button type="button" class="romantic5" onclick="myFunction()">
-            <span>Make Everything Romantic</span>
-        </button>
-        <button type="button" class="romantic6" onclick="myFunction()">
-            <span>Make Everything Romantic</span>
-        </button>
-        <button type="button" class="romantic7" onclick="myFunction()">
-            <span>Make Everything Romantic</span>
-        </button>
-    </div>
 
-    <div class="watermark">
-        Made by Pranav &#10084;&#65039;
-    </div>
+        <button type="button" class="romantic-pill" onclick="myFunction()">
+            <span>Make it more romantic</span>
+        </button>
+    </main>
+
+    <div class="watermark">Made with love for Boo</div>
 
     <script>
         function yesFunction() {

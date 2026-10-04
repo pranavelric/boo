@@ -1,26 +1,27 @@
-//Making bg
-function lines(){
-    let sizeW = Math.random() * 12;
-    let duration = Math.random() * 3;
-    let e = document. createElement('div');
-    e.setAttribute('class', 'circle');
-    document.body.appendChild(e);
-    e.style.width = 2*sizeW + 'px';
-    e.style.left = Math.random() * + innerWidth + 'px';
-    e.style.animationDuration = 2 + duration + 's';
-    setTimeout(function(){
-        document.body.removeChild(e)
-    }, 4000);
+const heartLayer = document.querySelector('.heart-layer');
+
+function floatHeart() {
+    if (!heartLayer) return;
+
+    const heart = document.createElement('span');
+    heart.className = 'floating-heart';
+    heart.textContent = '❤';
+    heart.style.left = `${Math.random() * 90 + 5}%`;
+    heart.style.fontSize = `${Math.random() * 0.7 + 0.65}rem`;
+    heart.style.animationDuration = `${Math.random() * 2 + 5}s`;
+    heartLayer.appendChild(heart);
+    setTimeout(() => heart.remove(), 7000);
 }
 
-setInterval(function(){
-    lines();
-}, 200);
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const heartInterval = reduceMotion ? null : setInterval(floatHeart, 950);
 
 //Linking to Yes and page
 function yesFunction() {
-    window.location.href = "no-boyfriend.html";
+    if (heartInterval) clearInterval(heartInterval);
+    window.location.href = "sorry.html";
 }
 function noFunction() {
+    if (heartInterval) clearInterval(heartInterval);
     window.location.href = "yes.html";
 }

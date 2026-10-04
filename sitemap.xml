@@ -11,6 +11,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://ask-her-out.rohansrma.me/pages/compliment-show.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://ask-her-out.rohansrma.me/pages/loading.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
@@ -36,7 +41,7 @@
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://ask-her-out.rohansrma.me/pages/no-boyfriend.html</loc>
+    <loc>https://ask-her-out.rohansrma.me/pages/sorry.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>

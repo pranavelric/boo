@@ -1,4 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400..600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --ivory: #f9f3ee;
+  --paper: #fffaf6;
+  --blush: #f1d7d7;
+  --rose: #c86a7d;
+  --rose-deep: #8d4558;
+  --plum: #312235;
+  --ink: #2c1e22;
+  --warm: #d7a172;
+  --muted: rgba(44, 30, 34, 0.68);
+  --line: rgba(98, 63, 72, 0.18);
+}
 
 *,
 *::before,
@@ -10,30 +23,45 @@
 
 html {
   -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Quicksand', 'Trebuchet MS', sans-serif;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
   font-weight: 500;
+  color: var(--ink);
+  background: var(--ivory);
 }
 
 h1,
 h2,
-h3 {
-  font-family: 'Quicksand', 'Trebuchet MS', sans-serif;
-  font-weight: 600;
+h3,
+h4,
+.eyebrow,
+.kicker,
+.section-tag,
+.signature,
+.letter p:first-of-type,
+.letter p:nth-of-type(2) {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  letter-spacing: 0.02em;
 }
 
 img {
   max-width: 100%;
   height: auto;
+  display: block;
 }
 
 a {
+  color: inherit;
   text-decoration: none;
 }
 
 button {
+  font: inherit;
+  border: none;
+  background: none;
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
 }
@@ -46,25 +74,21 @@ button {
 }
 
 .watermark {
-  opacity: 0.5;
   position: fixed;
-  bottom: 0.6rem;
   left: 50%;
+  bottom: 0.7rem;
   transform: translateX(-50%);
-  font-size: 0.95rem;
-  z-index: 10;
+  z-index: 20;
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
   white-space: nowrap;
   text-align: center;
+  opacity: 0.65;
+  color: rgba(44, 30, 34, 0.7);
 }
 
 .watermark a {
   color: inherit;
-}
-
-@media (max-width: 480px) {
-  .watermark {
-    font-size: 0.75rem;
-  }
 }
 
 .music-toggle {
@@ -80,7 +104,7 @@ button {
   line-height: 1;
   border: none;
   border-radius: 50%;
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(49, 34, 53, 0.7);
   color: #fff;
   cursor: pointer;
   opacity: 0.65;
@@ -95,3 +119,11 @@ button {
 .music-toggle.is-muted {
   opacity: 0.4;
 }
+
+@media (max-width: 480px) {
+  .watermark {
+    font-size: 0.68rem;
+    bottom: 0.5rem;
+  }
+}
+

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Making it Romantic... - But... I Love You</title>
-    <meta name="description" content="Getting everything ready before the big question - part of the But... I Love You interactive love confession experience.">
+    <title>Making it romantic...</title>
+    <meta name="description" content="A gentle little loading moment before the last question for Boo.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://ask-her-out.rohansrma.me/pages/loading.html">
     <link rel="icon" href="../assets/img/logo.png" type="image/png">
@@ -15,20 +15,20 @@
     <link rel="stylesheet" href="../assets/css/loading.css" />
 </head>
 <body>
-    <div class="containter">
-        <div class="center">
+    <main class="loading-scene" aria-live="polite">
+        <div class="loading-card">
+            <p class="status">Making something special...</p>
+            <div class="pulse-ring"></div>
             <button id="disable" class="btn" disabled>
-                <span>Loading...</span>
+                <span>For you.</span>
             </button>
-            <button id="enable" class="btn">
-                <span>Click me</span>
+            <button id="enable" class="btn hidden" type="button">
+                <span>Open the question</span>
             </button>
         </div>
-    </div>
+    </main>
 
-    <div class="watermark">
-        Made by Pranav &#10084;&#65039;
-    </div>
+    <div class="watermark">Made with love for Boo</div>
 
     <script src="../assets/js/loading.js"></script>
 </body>
